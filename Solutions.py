@@ -270,3 +270,26 @@ n=int(input())
 a = input().split()
 print(any(i == i[::-1] for i in a) & all(int(j)>0 for j in a) )
 
+# Sorting1234
+# sort lower, upper, by odd number and then even numbers
+s=input()
+lstlower=[]
+lstupper=[]
+lstodd=[]
+lsteven=[]
+
+for i in s:
+    if i.islower():
+        lstlower.append(i)
+    elif i.isupper():
+        lstupper.append(i)
+    elif int(i)%2 == 1:
+        lstodd.append(i)
+    elif int(i) % 2 == 0:
+        lsteven.append(i)
+
+a=sorted(lstlower)+sorted(lstupper)+sorted(lstodd)+sorted(lsteven)
+
+#Alternative one liner code
+print(*sorted(input(), key=lambda c: (c.isdigit() - c.islower(), c in '02468', c)), sep='')
+
