@@ -265,3 +265,8 @@ print(max(results))
 for row in sorted(arr, key=lambda row:row[k]):
         print(*row)
 
+# to check numbers are positive as well any one is palandromic
+n=int(input())
+a = input().split()
+print(any(i == i[::-1] for i in a) & all(int(j)>0 for j in a) )
+
